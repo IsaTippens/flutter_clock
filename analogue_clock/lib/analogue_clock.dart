@@ -1,12 +1,11 @@
 import 'dart:async';
 
-import 'package:flutter/rendering.dart';
-
 import 'analogue_clock_face.dart';
 import 'model.dart';
 import 'needle.dart';
 import 'pin.dart';
 
+import 'package:flutter/rendering.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
 

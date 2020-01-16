@@ -45,9 +45,8 @@ class RadialDial extends StatelessWidget {
     List<Widget> result = new List<Widget>();
     double angleDivisor = radians(360 / length);
     num extender = distance;
-    String digit;
-
     num start = startAtZero ? 0 : 1;
+    String digit;
 
     for (num i = start; i < length + start; i++) {
       if (i % divisor != 0 && useSeperators) {
@@ -56,9 +55,9 @@ class RadialDial extends StatelessWidget {
         digit = i.toString();
       }
 
-      double angle = clockwise
-          ? i * angleDivisor + 3.14 - radians(360 * this.value / length)
-          : i * angleDivisor - 3.14 / 2 - radians(360 * this.value / length);
+      double angle = i * angleDivisor -
+          radians(360 * this.value / length) +
+          (clockwise ? 3.14 : -3.14 / 2);
       var transform = Matrix4.identity();
       if (clockwise) {
         transform.translate(sin(angle) * extender, cos(angle) * extender);

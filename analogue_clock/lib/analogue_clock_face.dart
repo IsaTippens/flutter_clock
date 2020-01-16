@@ -12,6 +12,8 @@ class AnalogueClockFace extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+    final clockwise = false;
+    
     return Semantics.fromProperties(
       properties: SemanticsProperties(value: DateFormat.Hms().format(now)),
       explicitChildNodes: true,
@@ -23,6 +25,7 @@ class AnalogueClockFace extends StatelessWidget {
             textSize: 60,
             value: now.hour + (now.minute / 60.0),
             startAtZero: false,
+            clockwise: clockwise,
           ),
           RadialDial(
             length: 60,
@@ -31,6 +34,7 @@ class AnalogueClockFace extends StatelessWidget {
             value: now.minute + (now.second / 60),
             useSeperators: true,
             divisor: 5,
+            clockwise: clockwise,
           ),
           RadialDial(
             length: 60,
@@ -39,6 +43,7 @@ class AnalogueClockFace extends StatelessWidget {
             value: now.second + (now.millisecond / 1000),
             useSeperators: true,
             divisor: 15,
+            clockwise: clockwise,
           ),
         ],
       ),
