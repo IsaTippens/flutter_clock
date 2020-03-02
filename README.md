@@ -1,3 +1,2 @@
 # Analouge Clock
-The clock that rotates itself!
-![](clock.gif)
+![The clock that rotates itself!](clock.gif)
